@@ -1,0 +1,19 @@
+# Created by Andrew Vandegrift on 4 Jun 2013, modified 21 Feb 2014.
+# just the simple command in QIIME to pick OTUs
+
+# download macqiime (http://www.wernerlab.org/software/macqiime)
+# I was using MacQIIME version 1.7.0-20130523
+
+# calls the qiime programs into memory
+macqiime
+
+
+# QIIME picks OTUs
+# input is all available curated sequences. Quality cut-off below 500 bp and above 1000 bp was imposed. 
+pick_otus.py -i StromataEndo_Sequences_500-1000bp.fasta -s 0.97 -o uclust_picked_otus_95
+pick_otus.py -i StromataEndo_Sequences_500-1000bp.fasta -s 0.97 -o uclust_picked_otus_97
+pick_otus.py -i StromataEndo_Sequences_500-1000bp.fasta -s 0.97 -o uclust_picked_otus_99
+
+# The 97% similarity almost perfectly matches the morphological identifications. The OTU with X. schweinitzii and X. ophiopoda is later split by hand -- 99 (or 98) percent similarity results in over-splitting other groups. 
+
+# revised OTU file, with inserted names and a sum of the number of occurrences, was generated in Excel, and is called 2012_Final_Seqs_otus_97_refined5.csv and 2012_Final_Seqs_otus_97_refined5.xlsx (files are the same, save for formatting bold and italics for scientific names). 
